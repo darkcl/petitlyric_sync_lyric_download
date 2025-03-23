@@ -193,7 +193,7 @@ def lsy_decoder(
             )
         )
         time_cs = time_raw ^ protection_key  # cs means centisecond
-        time_cs = time_cs % 65536 + 65536 * (elapsed_time // 65536)
+        time_cs = time_cs % 65535 + 65535 * (elapsed_time // 65535)
         time_string = ms2mmss(10 * time_cs)
         elapsed_time = time_cs
         # Parsing lyric:
